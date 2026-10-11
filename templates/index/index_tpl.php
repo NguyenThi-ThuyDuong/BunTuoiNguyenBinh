@@ -513,7 +513,8 @@
         $groupedProjects = [];
         if (!empty($duan) && is_array($duan)) {
             foreach ($duan as $v) {
-                $catName = !empty($v['mota' . $lang]) ? trim($v['mota' . $lang]) : 'CÔNG NGHIỆP';
+                $rawCatName = !empty($v['mota' . $lang]) ? trim($v['mota' . $lang]) : 'CÔNG NGHIỆP';
+                $catName = htmlspecialchars_decode($rawCatName);
                 $groupedProjects[$catName][] = $v;
             }
         }
@@ -527,7 +528,7 @@
         <div class="category-block mb-5 p-4 rounded-lg" style="background-color: #f2f6fa; border-radius: 12px;">
             <div class="mb-4">
                 <span class="badge px-4 py-2 text-white font-weight-bold text-uppercase" style="background-color: #0e5380; font-size: 14px; border-radius: 4px;">
-                    <?= htmlspecialchars($catName) ?>
+                    <?= htmlspecialchars_decode($catName) ?>
                 </span>
             </div>
 
@@ -541,7 +542,7 @@
                         <?php foreach ($catGroup as $v) { 
                             $photo_file = $v['photo'] ?? '';
                             $photo_url = (!empty($photo_file) && file_exists(UPLOAD_NEWS_L . $photo_file)) ? UPLOAD_NEWS_L . $photo_file : $placeholder_img;
-                            $ten_display = $v['ten' . $lang] ?? ($v['tenvi'] ?? '');
+                            $ten_display = htmlspecialchars_decode($v['ten' . $lang] ?? ($v['tenvi'] ?? ''));
                             $link_display = $v['tenkhongdauvi'] ?? '#';
                         ?>
                         <div class="duan-item">
@@ -558,7 +559,7 @@
                                 </div>
                                 <div class="card-body p-3 bg-white text-left">
                                     <h3 class="card-title font-weight-bold m-0">
-                                        <a href="<?= $link_display ?>"><?= htmlspecialchars($ten_display) ?></a>
+                                        <a href="<?= $link_display ?>"><?= $ten_display ?></a>
                                     </h3>
                                 </div>
                             </div>
@@ -602,7 +603,7 @@
             ?>
             <div class="col-6 col-md-4 col-lg-3 mb-4">
                 <a href="<?= $p_link ?>" <?= $p_target ?> class="partner-card-box d-flex align-items-center justify-content-center text-decoration-none">
-                    <img onerror="this.src='assets/images/noimage.png';" src="<?= $p_img ?>" alt="<?= htmlspecialchars($v['ten' . $lang] ?? 'Đối tác') ?>">
+                    <img onerror="this.src='assets/images/noimage.png';" src="<?= $p_img ?>" alt="<?= htmlspecialchars(htmlspecialchars_decode($v['ten' . $lang] ?? 'Đối tác')) ?>">
                 </a>
             </div>
             <?php } } else { ?>

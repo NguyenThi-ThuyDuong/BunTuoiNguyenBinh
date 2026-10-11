@@ -61,8 +61,8 @@
                         $s_img = (!empty($s['photo']) && file_exists(UPLOAD_PHOTO_L . $s['photo'])) ? UPLOAD_PHOTO_L . $s['photo'] : '';
                         if($s_img) {
                     ?>
-                    <a href="<?= !empty($s['link']) ? $s['link'] : '#' ?>" target="_blank" class="btn rounded-circle d-inline-flex align-items-center justify-content-center text-decoration-none shadow-sm border p-0 overflow-hidden" style="width: 38px; height: 38px;" title="<?= htmlspecialchars($s['ten' . $lang] ?? '') ?>">
-                        <img src="<?= $s_img ?>" alt="<?= htmlspecialchars($s['ten' . $lang] ?? '') ?>" style="width: 100%; height: 100%; object-fit: cover;">
+                    <a href="<?= !empty($s['link']) ? $s['link'] : '#' ?>" target="_blank" class="btn rounded-circle d-inline-flex align-items-center justify-content-center text-decoration-none shadow-sm border p-0 overflow-hidden" style="width: 38px; height: 38px;" title="<?= htmlspecialchars(htmlspecialchars_decode($s['ten' . $lang] ?? '')) ?>">
+                        <img src="<?= $s_img ?>" alt="<?= htmlspecialchars(htmlspecialchars_decode($s['ten' . $lang] ?? '')) ?>" style="width: 100%; height: 100%; object-fit: cover;">
                     </a>
                     <?php } } } ?>
                 </div>
