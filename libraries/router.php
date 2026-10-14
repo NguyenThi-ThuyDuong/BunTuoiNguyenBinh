@@ -39,12 +39,12 @@ $router->map('GET', 'dangnhap', function () {
 	$func->redirect($config['database']['url'] . "dangnhap/index.php");
 	exit;
 });
-$router->map('GET|POST', '', 'index', 'home');
-$router->map('GET|POST', 'index.php', 'index', 'index');
-$router->map('GET|POST', 'sitemap.xml', 'sitemap', 'sitemap');
-$router->map('GET|POST', '[a:com]', 'allpage', 'show');
-$router->map('GET|POST', '[a:com]/[a:lang]/', 'allpagelang', 'lang');
-$router->map('GET|POST', '[a:com]/[a:action]', 'account', 'account');
+$router->map('GET|POST|HEAD', '', 'index', 'home');
+$router->map('GET|POST|HEAD', 'index.php', 'index', 'index');
+$router->map('GET|POST|HEAD', 'sitemap.xml', 'sitemap', 'sitemap');
+$router->map('GET|POST|HEAD', '[a:com]', 'allpage', 'show');
+$router->map('GET|POST|HEAD', '[a:com]/[a:lang]/', 'allpagelang', 'lang');
+$router->map('GET|POST|HEAD', '[a:com]/[a:action]', 'account', 'account');
 $router->map('GET', THUMBS . '/[i:w]x[i:h]x[i:z]/[**:src]', function ($w, $h, $z, $src) {
 	global $func;
 	$func->createThumb($w, $h, $z, $src, null, THUMBS);
