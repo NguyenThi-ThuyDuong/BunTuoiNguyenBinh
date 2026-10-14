@@ -1,6 +1,6 @@
 <?php
     $pro_img = (!empty($row_detail['photo']) && file_exists(UPLOAD_PRODUCT_L . $row_detail['photo']))
-        ? 'thumbs/760x760x2/' . UPLOAD_PRODUCT_L . $row_detail['photo']
+        ? UPLOAD_PRODUCT_L . $row_detail['photo']
         : 'assets/images/noimage.png';
     $pro_price = !empty($row_detail['giamoi']) ? $row_detail['giamoi'] : $row_detail['gia'];
     $company_hotline = !empty($optsetting['hotline']) ? $optsetting['hotline'] : '0984050679';
@@ -34,17 +34,19 @@
                         <a class="thumb-pro-detail mz-thumb-selected" data-zoom-id="Zoom-1"
                             href="<?= $pro_img ?>"
                             title="<?= $row_detail['ten' . $lang] ?>">
-                            <img onerror="this.onerror=null;this.src='thumbs/760x760x2/assets/images/noimage.png';"
+                            <img onerror="this.onerror=null;this.src='assets/images/noimage.png';"
                                 src="<?= $pro_img ?>"
                                 alt="<?= $row_detail['ten' . $lang] ?>">
                         </a>
                         <?php if (!empty($hinhanhsp)) { foreach ($hinhanhsp as $v) { 
-                            $thumb_child = 'thumbs/760x760x2/' . UPLOAD_PRODUCT_L . $v['photo'];
+                            $thumb_child = (!empty($v['photo']) && file_exists(UPLOAD_PRODUCT_L . $v['photo']))
+                                ? UPLOAD_PRODUCT_L . $v['photo']
+                                : 'assets/images/noimage.png';
                         ?>
                         <a class="thumb-pro-detail" data-zoom-id="Zoom-1"
                             href="<?= $thumb_child ?>"
                             title="<?= $row_detail['ten' . $lang] ?>">
-                            <img onerror="this.onerror=null;this.src='thumbs/760x760x2/assets/images/noimage.png';"
+                            <img onerror="this.onerror=null;this.src='assets/images/noimage.png';"
                                 src="<?= $thumb_child ?>"
                                 alt="<?= $row_detail['ten' . $lang] ?>">
                         </a>
@@ -54,7 +56,7 @@
                         data-options="zoomMode: off; hint: off; rightClick: true; selectorTrigger: hover; expandCaption: false; history: false;"
                         href="<?= $pro_img ?>"
                         title="<?= $row_detail['ten' . $lang] ?>">
-                        <img onerror="this.onerror=null;this.src='thumbs/760x760x2/assets/images/noimage.png';"
+                        <img onerror="this.onerror=null;this.src='assets/images/noimage.png';"
                             src="<?= $pro_img ?>"
                             alt="<?= $row_detail['ten' . $lang] ?>">
                     </a>
@@ -165,12 +167,12 @@
         <?php if (!empty($product) && count($product) > 0) { 
             foreach ($product as $k => $v) { 
                 $rel_img = (!empty($v['photo']) && file_exists(UPLOAD_PRODUCT_L . $v['photo']))
-                    ? 'thumbs/380x270x2/' . UPLOAD_PRODUCT_L . $v['photo']
+                    ? UPLOAD_PRODUCT_L . $v['photo']
                     : 'assets/images/noimage.png';
         ?>
         <div class="boxproduct_item">
             <a class="boxproduct_img" href="<?= $v['tenkhongdau' . $lang] ?>"><span><img
-                        onerror="this.src='thumbs/380x270x2/assets/images/noimage.png';"
+                        onerror="this.onerror=null;this.src='assets/images/noimage.png';"
                         src="<?= $rel_img ?>"
                         alt="<?= $v['ten' . $lang] ?>" /></span></a>
             <div class="boxproduct_info">

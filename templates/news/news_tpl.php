@@ -5,7 +5,7 @@
             <div class="content-main news-list-grid w-clear">
                 <?php foreach($news as $k => $v) { 
                     $n_img = (!empty($v['photo']) && file_exists(UPLOAD_NEWS_L . $v['photo']))
-                        ? 'thumbs/480x360x1/' . UPLOAD_NEWS_L . $v['photo']
+                        ? UPLOAD_NEWS_L . $v['photo']
                         : 'assets/images/noimage.png';
                     $n_date = (!empty($v['ngaytao'])) ? date('d/m/Y', $v['ngaytao']) : date('d/m/Y');
                     $n_iso = (!empty($v['ngaytao'])) ? date('Y-m-d', $v['ngaytao']) : date('Y-m-d');
@@ -13,7 +13,7 @@
                     <article class="news w-clear">
                         <p class="pic-news scale-img">
                             <a class="text-decoration-none" href="<?= $v['tenkhongdauvi'] ?>" title="<?= $v['ten' . $lang] ?>">
-                                <img onerror="this.src='thumbs/480x360x2/assets/images/noimage.png';" src="<?= $n_img ?>" alt="<?= $v['ten' . $lang] ?>"/>
+                                <img onerror="this.onerror=null;this.src='assets/images/noimage.png';" src="<?= $n_img ?>" alt="<?= $v['ten' . $lang] ?>"/>
                             </a>
                         </p>
                         <div class="info-news">

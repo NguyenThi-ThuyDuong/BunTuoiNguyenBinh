@@ -31,7 +31,7 @@
                             <div class="procart procart-<?= $code ?> d-flex align-items-start justify-content-between">
                                 <div class="pic-procart">
                                     <a class="text-decoration-none" href="<?= $proinfo[$sluglang] ?>" target="_blank" title="<?= $proinfo['ten' . $lang] ?>">
-                                        <img onerror="this.src='thumbs/85x85x2/assets/images/noimage.png';" src="<?= $pro_img ?>" alt="<?= $proinfo['ten' . $lang] ?>">
+                                        <img onerror="this.onerror=null;this.src='assets/images/noimage.png';" src="<?= $pro_img ?>" alt="<?= $proinfo['ten' . $lang] ?>">
                                     </a>
                                     <a class="del-procart text-decoration-none" data-code="<?= $code ?>">
                                         <i class="fa fa-times-circle"></i>
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="pic-procart pic-procart-rp">
                                         <a class="text-decoration-none" href="<?= $proinfo[$sluglang] ?>" target="_blank" title="<?= $proinfo['ten' . $lang] ?>">
-                                            <img onerror="this.src='thumbs/85x85x2/assets/images/noimage.png';" src="<?= $pro_img ?>" alt="<?= $proinfo['ten' . $lang] ?>">
+                                            <img onerror="this.onerror=null;this.src='assets/images/noimage.png';" src="<?= $pro_img ?>" alt="<?= $proinfo['ten' . $lang] ?>">
                                         </a>
                                         <a class="del-procart text-decoration-none" data-code="<?= $code ?>">
                                             <i class="fa fa-times-circle"></i>

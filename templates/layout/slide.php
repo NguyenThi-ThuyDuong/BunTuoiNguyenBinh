@@ -31,7 +31,7 @@
                 <?php foreach($slider as $v) { ?>
                 <div class="item_slider">
                     <a href="<?=$v['link']?>" target="_blank" title="<?=$v['ten'.$lang]?>"><img
-                            onerror="this.src='<?=THUMBS?>/910x380x2/assets/images/noimage.png';"
+                            onerror="this.onerror=null;this.src='assets/images/noimage.png';"
                             src="<?=UPLOAD_PHOTO_L.$v['photo']?>" alt="<?=$v['ten'.$lang]?>"
                             title="<?=$v['ten'.$lang]?>" /></a>
                     <!-- <?php if($v['ten'.$lang]!=''){?>

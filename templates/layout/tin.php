@@ -3,8 +3,13 @@
         <?php foreach ($tintuc as $key => $value) { if($key == 0){ continue; }?>
         <div class="tintuc_item tt_row">
             <a class="scale-img tintuc_img" href="<?= $value['tenkhongdauvi'] ?>">
-                <img onerror="this.src='<?= THUMBS ?>/300x200x1/assets/images/noimage.png';"
-                    src="<?= THUMBS ?>/300x200x1/<?= UPLOAD_NEWS_L . $value['photo'] ?>"
+                <?php
+                    $tin_img = (!empty($value['photo']) && file_exists(UPLOAD_NEWS_L . $value['photo']))
+                        ? UPLOAD_NEWS_L . $value['photo']
+                        : 'assets/images/noimage.png';
+                ?>
+                <img onerror="this.onerror=null;this.src='assets/images/noimage.png';"
+                    src="<?= $tin_img ?>"
                     alt="<?= $value['ten' . $lang] ?>" />
                 <div class="tintuc_time">
                     <p>
@@ -30,8 +35,13 @@
     <div class="col-md-6">
         <div class="tintuc_item">
             <a class="scale-img tintuc_img" href="<?= $tintuc[0]['tenkhongdauvi'] ?>">
-                <img onerror="this.src='<?= THUMBS ?>/600x380x1/assets/images/noimage.png';"
-                    src="<?= THUMBS ?>/600x380x1/<?= UPLOAD_NEWS_L . $tintuc[0]['photo'] ?>"
+                <?php
+                    $tin0_img = (!empty($tintuc[0]['photo']) && file_exists(UPLOAD_NEWS_L . $tintuc[0]['photo']))
+                        ? UPLOAD_NEWS_L . $tintuc[0]['photo']
+                        : 'assets/images/noimage.png';
+                ?>
+                <img onerror="this.onerror=null;this.src='assets/images/noimage.png';"
+                    src="<?= $tin0_img ?>"
                     alt="<?= $tintuc[0]['ten' . $lang] ?>" />
                 <div class="tintuc_time">
                     <p>

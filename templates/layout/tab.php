@@ -17,8 +17,13 @@
             <?php foreach ($sp_for_list as $key => $value) { ?>
             <div class="sp_item">
                 <a class="scale-img" href="<?= $value['tenkhongdauvi'] ?>">
-                    <img onerror="this.src='<?= THUMBS ?>/300x250x1/assets/images/noimage.png';"
-                        src="<?= THUMBS ?>/300x250x1/<?= UPLOAD_PRODUCT_L . $value['photo'] ?>"
+                    <?php
+                        $tab_p_img = (!empty($value['photo']) && file_exists(UPLOAD_PRODUCT_L . $value['photo']))
+                            ? UPLOAD_PRODUCT_L . $value['photo']
+                            : 'assets/images/noimage.png';
+                    ?>
+                    <img onerror="this.onerror=null;this.src='assets/images/noimage.png';"
+                        src="<?= $tab_p_img ?>"
                         alt="<?= $value['ten' . $lang] ?>" />
                 </a>
                 <div class="sp_content">

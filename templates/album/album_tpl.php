@@ -2,7 +2,12 @@
 <div class="content-main w-clear">
     <?php if(count($product)>0) { for($i=0;$i<count($product);$i++) { ?>
         <a class="album text-decoration-none" href="<?=$product[$i][$sluglang]?>" title="<?=$product[$i]['ten'.$lang]?>">
-            <p class="pic-album scale-img"><img onerror="this.src='<?=THUMBS?>/480x360x2/assets/images/noimage.png';" src="<?=THUMBS?>/480x360x1/<?=UPLOAD_PRODUCT_L.$product[$i]['photo']?>" alt="<?=$product[$i]['ten'.$lang]?>"/></p>
+            <?php
+                $alb_img = (!empty($product[$i]['photo']) && file_exists(UPLOAD_PRODUCT_L . $product[$i]['photo']))
+                    ? UPLOAD_PRODUCT_L . $product[$i]['photo']
+                    : 'assets/images/noimage.png';
+            ?>
+            <p class="pic-album scale-img"><img onerror="this.onerror=null;this.src='assets/images/noimage.png';" src="<?= $alb_img ?>" alt="<?=$product[$i]['ten'.$lang]?>"/></p>
             <h3 class="name-album text-split"><?=$product[$i]['ten'.$lang]?></h3>
         </a>
     <?php } } else { ?>

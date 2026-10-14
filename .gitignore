@@ -6,6 +6,8 @@
 caches/*
 !caches/.gitkeep
 !caches/.htaccess
+thumbs/*
+!thumbs/.gitkeep
 logs/*
 !logs/.gitkeep
 *.log

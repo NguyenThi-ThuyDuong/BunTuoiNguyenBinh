@@ -16,8 +16,8 @@
                                 <i class="fas fa-seedling text-[18px] transition duration-300 group-hover:scale-110 sm-max:text-[14px]"></i>
                             </span>
                             <img class="h-full w-full object-contain transition duration-500 ease-out group-hover:scale-[1.06]"
-                                onerror="this.onerror=null;this.src='thumbs/500x500x2/assets/images/noimage.png';"
-                                src="<?= THUMBS ?>/500x500x2/<?= $p_img ?>"
+                                onerror="this.onerror=null;this.src='assets/images/noimage.png';"
+                                src="<?= $p_img ?>"
                                 alt="<?= $v['ten' . $lang] ?>" />
                         </a>
 

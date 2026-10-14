@@ -1441,6 +1441,12 @@
 					$mime_type = 'png';
 					break;
 
+				case 'WEBP':
+					$image = function_exists('imagecreatefromwebp') ? imagecreatefromwebp($image_url) : null;
+					$func='imagewebp';
+					$mime_type = 'webp';
+					break;
+
 				default: die("UNKNOWN IMAGE TYPE: $image_url");
 			}
 
@@ -1710,11 +1716,13 @@
 			if($upload_dir)
 			{
 				if($func == 'imagejpeg') $func($canvas, $upload_dir.$image_name,100);
+				else if($func == 'imagewebp') $func($canvas, $upload_dir.$image_name,90);
 				else $func($canvas, $upload_dir.$image_name,floor($quality * 0.09));	
 			}
 
 			header('Content-Type: image/' . $mime_type);
 			if($func=='imagejpeg') $func($canvas, NULL,100);
+			else if($func=='imagewebp') $func($canvas, NULL,90);
 			else $func($canvas, NULL,floor($quality * 0.09));
 
 			imagedestroy($canvas);

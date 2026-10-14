@@ -15,8 +15,8 @@
 <!-- Favicon -->
 <?php
     $fav_url = (!empty($favicon['photo']) && file_exists(UPLOAD_PHOTO_L . $favicon['photo']))
-        ? (THUMBS . '/48x48x3/' . UPLOAD_PHOTO_L . $favicon['photo'])
-        : ((!empty($logo['photo']) && file_exists(UPLOAD_PHOTO_L . $logo['photo'])) ? (THUMBS . '/48x48x3/' . UPLOAD_PHOTO_L . $logo['photo']) : 'assets/images/logo.png');
+        ? (UPLOAD_PHOTO_L . $favicon['photo'])
+        : ((!empty($logo['photo']) && file_exists(UPLOAD_PHOTO_L . $logo['photo'])) ? (UPLOAD_PHOTO_L . $logo['photo']) : 'assets/images/logo.png');
 ?>
 <link href="<?= $fav_url ?>" rel="shortcut icon" type="image/x-icon" />
 
