@@ -428,7 +428,7 @@ if ($id != '') {
 	$params = array($type);
 
 	$curPage = $get_page;
-	$per_page = 20;
+	$per_page = 16;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
 	$sql = "select a.ten$lang, a.tenkhongdauvi, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";

@@ -15,16 +15,16 @@
 	$config = array(
 		'customEmail' => '', //email nhận mật khẩu
 		'copright' => array(// thông tin công ty tts
-			'name' => 'CÔNG TY TNHH CƠ ĐIỆN LẠNH ĐỨC NHÂN',
-			'email' => 'info@codienlanhducnhan.com',
-			'dienthoai' => '0901.234.567',
-			'diachi' => 'Gò Vấp, Thành phố Hồ Chí Minh',
-			'website' => 'codienlanhducnhan.com',
-			'worktime' => '8h - 17h từ thứ 2 đến thứ bảy'
+			'name' => 'CÔNG TY CỔ PHẦN KỶ NGUYÊN BÚN NGUYỄN BÍNH',
+			'email' => 'bunthuducnguyenbinh@gmail.com',
+			'dienthoai' => '0984 050 679',
+			'diachi' => '107/3 Bàu Cát 1, P. 14, Q. Tân Bình, TP. Hồ Chí Minh',
+			'website' => 'buntuoinguyenbinh.vn',
+			'worktime' => '7h30 - 17h00 từ Thứ 2 đến Thứ 7'
 		),
 		'author' => array(
-			'name' => 'CÔNG TY TNHH CƠ ĐIỆN LẠNH ĐỨC NHÂN',
-			'email' => 'info@codienlanhducnhan.com',
+			'name' => 'CÔNG TY CỔ PHẦN KỶ NGUYÊN BÚN NGUYỄN BÍNH',
+			'email' => 'bunthuducnguyenbinh@gmail.com',
 			'timefinish' => 'Unknown'
 		),
 		'arrayDomainSSL' => array(),
@@ -35,19 +35,19 @@
 			'host' => '127.0.0.1',
 			'username' => 'root',
 			'password' => '',
-			'dbname' => 'codienlanh_ducnhan',
+			'dbname' => 'buntuoi_nguyenbinh',
 			'port' => 3306,
 			'prefix' => 'table_',
 			'charset' => 'utf8'
 		),
 		'website' => array(
 			'sendmail' => false,
-			'error-reporting' => true,
+			'error-reporting' => false,
 			'secret' => '$tts@',
 			'salt' => 'swKJaajeS!t',
 			'debug-developer' => false,
-			'debug-css' => false,
-			'debug-js' => false,
+			'debug-css' => true,
+			'debug-js' => true,
 			'index' => false,
 			'upload' => array(
 				'max-width' => 1600,
@@ -70,7 +70,7 @@
 				"gioi-thieu" => array("vi"=>"gioi-thieu"),
 				"tin-tuc" => array("vi"=>"tin-tuc"),
 				"san-pham" => array("vi"=>"san-pham"),
-				"cong-trinh" => array("vi"=>"cong-trinh"),
+				"tuyen-dung" => array("vi"=>"tuyen-dung"),
 				"dich-vu" => array("vi"=>"dich-vu"),
 				"lien-he" => array("vi"=>"lien-he")
 			)

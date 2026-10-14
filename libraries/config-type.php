@@ -1,24 +1,9 @@
 <?php
     /* Config type - Group */
     $config['group'] = array(
-        /*"Group Sản Phẩm" => array(
-            "product" => array("san-pham"),
-            //"tags" => array("san-pham"),
-            //"static" => array("gioi-thieu-san-pham"),
-            //"photo" => array("slide-product"),
-            //"photo_static" => array("watermark"),
-            //"newsletter" => array("dangkybaogia")
-        ),*/
         "Nội dung trang chủ" => array(
             "photo" => array("slider"),
-            // "news" => array("feedback"),
-            // "photo_static" => array("background-tieuchi"),
-            //"tags" => array("tin-tuc"),
-            //"newsletter" => array("dangkytuyendung")
         ),
-        // "Quản lý tin tức" => array(
-        //     "news" => array("tin-tuc","tin-tuc-hen-gio"),
-        // ),
     );
 
     /* Config type - Product */
@@ -44,7 +29,7 @@
         "gioi-thieu" => "Giới thiệu",
         "san-pham" => "Sản phẩm",
         "dich-vu" => "Dịch vụ",     
-        "du-an" => "Dự án",              
+        "tuyen-dung" => "Tuyển dụng",              
         "tin-tuc" => "Tin tức",        
         "lien-he" => "Liên hệ",
         // "video" => "Video",        

@@ -1,21 +1,27 @@
-# OS & IDE
-.DS_Store
-Thumbs.db
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
+# Database files
+*.sql
+*.sqlite
 
-# Cache files
+# Caches & Logs
 caches/*
 !caches/.gitkeep
-thumbs/*
-!thumbs/.gitkeep
-
-# Temporary files
-*.tmp
-*.log
-scratch/
-
+!caches/.htaccess
 logs/*
 !logs/.gitkeep
+*.log
+
+# Temp files
+*.tmp
+*.bak
+*.old
+sota/elfinder/php/.tmp/*
+sota/elfinder/debug.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Seed & migration scripts (temporary)
+seed_data.php
+sync_demo_data.php

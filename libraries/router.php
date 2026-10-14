@@ -19,6 +19,16 @@ $wtmNews = $d->rawQueryOne("select hienthi, photo, options from #_photo where ty
 
 /* Router */
 $router->setBasePath($config['database']['url']);
+$router->map('GET', 'admin/', function () {
+	global $func, $config;
+	$func->redirect($config['database']['url'] . "sota/");
+	exit;
+});
+$router->map('GET', 'admin', function () {
+	global $func, $config;
+	$func->redirect($config['database']['url'] . "sota/");
+	exit;
+});
 $router->map('GET', 'dangnhap/', function () {
 	global $func, $config;
 	$func->redirect($config['database']['url'] . "dangnhap/index.php");
@@ -99,6 +109,7 @@ $requick = array(
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", 'menu' => true),
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "du-an", "type" => "du-an", 'menu' => true),
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", 'menu' => true),
+	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tuyen-dung", "type" => "tuyen-dung", 'menu' => true),
 
 	/* Trang tĩnh */
 	array("tbl" => "static", "field" => "id", "source" => "static", "com" => "gioi-thieu", "type" => "gioi-thieu", 'menu' => true),
@@ -168,6 +179,14 @@ switch ($com) {
 		$seo->setSeo('type', isset($_GET['id']) ? "article" : "object");
 		$type = $com;
 		$title_crumb = "Dịch vụ";
+		break;
+
+	case 'tuyen-dung':
+		$source = "news";
+		$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+		$seo->setSeo('type', isset($_GET['id']) ? "article" : "object");
+		$type = $com;
+		$title_crumb = "Tuyển dụng";
 		break;
 
 	case 'video':

@@ -77,9 +77,9 @@
     $config['news'][$nametype]['height_list'] = 270;
     $config['news'][$nametype]['thumb_list'] = '100x100x1';
     $config['news'][$nametype]['img_type_list'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
-    /* Dự án */
-    $nametype = "du-an";
-    $config['news'][$nametype]['title_main'] = "Dự án";
+    /* Tuyển dụng */
+    $nametype = "tuyen-dung";
+    $config['news'][$nametype]['title_main'] = "Tuyển dụng";
     $config['news'][$nametype]['check'] = array('noibat'=> 'Nổi bật');
     $config['news'][$nametype]['dropdown'] = false;
     $config['news'][$nametype]['list'] = false;

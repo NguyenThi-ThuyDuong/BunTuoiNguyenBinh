@@ -1,94 +1,127 @@
-1/	Htaccess: Các bạn đổi lại tên của file **a.htaccess** -> **.htaccess**
+# Website Thương Mại & Giới Thiệu Doanh Nghiệp - Bún Tươi Nguyễn Bính
 
-2/  Database: **libraries > database > sneakerltepdo.sql**
+Website chính thức của thương hiệu **Bún Tươi Nguyễn Bính** (kế thừa làng nghề bún Thủ Đức truyền thống), kết hợp giải pháp thương mại điện tử giới thiệu sản phẩm, dịch vụ cung ứng thực phẩm sạch và hệ thống quản trị nội dung toàn diện **CMS SOTA**.
 
-3/  config-type.php: **libraries > config-type.php**
+---
 
-4/  Tạo lang column: **libraries > lang > langinit.php**
+## 📌 1. Mô tả dự án
 
-5/  Các phần nội dung liên quan đến ckeditor. Ra ngoài web lúc gọi mọi người sử dụng thêm hàm htmlspecialchars_decode(string)
+Dự án được xây dựng nhằm mục đích:
+- Quảng bá và giới thiệu thương hiệu bún tươi sạch truyền thống 100% không chất bảo quản của Nghệ nhân - Doanh nhân Nguyễn Thị Bính.
+- Trưng bày và quản lý danh mục sản phẩm phong phú: bún tươi sợi trung, bún bò sợi to, bánh phở tươi, mì quảng, bánh hỏi, bún gạo lứt, bún khô xuất khẩu...
+- Cung cấp dịch vụ cung ứng bún tươi, bánh phở cho các chuỗi nhà hàng, khách sạn, bếp ăn tập thể và suất ăn công nghiệp.
+- Cho phép khách hàng đặt hàng trực tuyến, lựa chọn ngày giao và khung giờ giao hàng linh hoạt.
+- Hệ thống quản trị nội dung **CMS SOTA** giúp quản lý đơn hàng, danh mục sản phẩm, bài viết tin tức, thông tin tuyển dụng, chính sách và cấu hình công ty một cách trực quan, linh hoạt.
 
-6/  Các folder trong **UPLOAD** được **Tạo** và **Define** tự động. Các bạn muốn **Tạo** hoặc **Define** thêm thì nhập tên folder trong file **constant.php**. Ví dụ:
+---
 
-    $array_const = array('TEN_FOLDER1', 'TEN_FOLDER2', ...);
+## 🛠️ 2. Công nghệ & Công cụ thực hiện
 
-7/	**config['group']** trong **config-type.php** giúp mình **Group Các Config có cùng nội dung** với nhau. Các bạn cấu hình theo mẫu mình đã để trong file. Hiện tại hỗ trợ các loại sau: **product**, **news**, **static**, **tags**, **newsletter**, **photo**, **photo_static**
+### Backend
+- **Ngôn ngữ**: PHP (phiên bản 7.4 - 8.2) theo kiến trúc MVC linh hoạt.
+- **Cơ sở dữ liệu**: MySQL / MariaDB (UTF-8 MB4 Unicode).
+- **Thư viện lõi**:
+  - `AltoRouter`: Điều hướng URL chuẩn SEO, thân thiện.
+  - `PDODb`: Xử lý truy vấn CSDL an toàn, chống SQL Injection.
+  - `FileCache`: Tối ưu tốc độ tải trang bằng cơ chế cache tệp tin.
+  - `PhpMailer`: Hỗ trợ gửi email thông báo đơn hàng và liên hệ.
+  - `MobileDetect`: Tự động nhận diện và tối ưu giao diện trên thiết bị di động.
 
-8/	Js có áp dụng code optimize nên các bạn lưu ý khi viết script hoặc nhúng các thư việc khác nhớ kiểm tra dấu **';'** ở cuối các đoạn script. Vì khi optimize thành file cached mà thiếu dấu **';'** . Js sẽ bị lỗi. Ví dụ:
+### Frontend
+- **HTML5 & CSS3**: Thiết kế hiện đại, tương thích chuẩn W3C.
+- **CSS Frameworks**: Tailwind CSS, Bootstrap 4.
+- **JavaScript & Thư viện UI**:
+  - **jQuery 3.x**: Xử lý logic và tương tác người dùng.
+  - **Swiper Slider & Owl Carousel & Slick Slider**: Hiệu ứng trình diễn slide banner, sản phẩm nổi bật và quy trình sản xuất.
+  - **Fancybox 3**: Xem video nhà máy và phóng to hình ảnh sản phẩm sắc nét.
+  - **GSAP & AOS (Animate on Scroll)**: Hiệu ứng chuyển động mượt mà khi cuộn trang.
+  - **FontAwesome 5 Pro**: Hệ thống biểu tượng giao diện trực quan.
 
-	$(window).scroll(function(){
-        // Do something
-    });
+### Quản trị CMS SOTA
+- Giao diện AdminLTE tinh gọn, dễ sử dụng.
+- Trình soạn thảo văn bản CKEditor & quản lý tệp tin ElFinder.
+- Quản lý đa cấp danh mục sản phẩm, quản lý đơn hàng chuyên nghiệp.
 
-    $('body').on("click",".element",function() {
-        // Do something
-    });
+---
 
-9/  Cần lưu ý các config sau:
-    
-    // 'url' để lại dấu '/' khi up lên host
-    
-    'database' => array(
-		'url' => '/',
-	),
-	
-	// Để FALSE các config sau khi up lên host
-	
-	'website' => array(
-		// Khi bật: Các account admin sẽ có full, Cấu hình được email host, cấu hình được ngôn ngữ (Chi bật khi lập trình hoặc debug)
-    	'debug-developer' => false,
+## 🚀 3. Hướng dẫn cài đặt & Chạy dự án
 
-    	// Khi bật: Website sẽ xuất ra từng đường dẫn CSS. Ngược lại sẽ tạo file cached.css (Tên file có thể thay đổi tùy ý)
-		'debug-css' => false,
+### Yêu cầu môi trường
+- Máy chủ web: **Apache** hoặc **Nginx** (khuyên dùng môi trường **Laragon** hoặc **XAMPP** trên Windows).
+- Phiên bản **PHP >= 7.4** (hỗ trợ tốt trên PHP 8.0, 8.1, 8.2).
+- Tiện ích mở rộng PHP bắt buộc: `pdo_mysql`, `curl`, `mbstring`, `gd`, `openssl`.
 
-		// Khi bật: Website sẽ xuất ra từng đường dẫn JS. Ngược lại sẽ tạo file cached.js (Tên file có thể thay đổi tùy ý)
-    	'debug-js' => false,
-    ),
+### Các bước cài đặt chi tiết
 
-	// Upload: max-width - max-height. Dùng để giới hạn kích thước upload hình. Nếu vượt quá sẽ tự resize lại theo config
-	
-	'website' => array(
-    	'upload' => array(
-			'max-width' => 1600,
-			'max-height' => 1600
-		)
-    ),
-    
-    // Slug - Seo chỉ nên để Tiếng Việt.
-    // Chỉ sử dụng đa ngôn ngữ khi đường dẫn có yêu cầu vi/tenkhongdau hoặc en/tenkhongdau (Code các bạn tự làm phần này)
+#### Bước 1: Tải mã nguồn về máy
+```bash
+git clone https://github.com/NguyenThi-ThuyDuong/BunTuoiNguyenBinh.git
+cd BunTuoiNguyenBinh
+```
 
-    'slug' => array(
-		'lang' => array(
-			"vi"=>"Tiếng Việt",
-			// "en"=>"Tiếng Anh"
-		)
-	),
-    'seo' => array(
-		'lang' => array(
-			"vi"=>"Tiếng Việt",
-			// "en"=>"Tiếng Anh"
-		)
-	)
-    
-    // Dùng để tạo phần Ngôn Ngữ SEO cho **Trang tĩnh trong admin** . Nếu trang không có ngôn ngữ khác thì chỉ cần thiết lập 'vi'
-    
-    'comlang' => array(
-		"gioi-thieu" => array("vi" => "gioi-thieu", "en" => "about-us"),
-		"san-pham" => array("vi" => "san-pham", "en" => "product"),
-		"tin-tuc" => array("vi" => "tin-tuc", "en" => "news"),
-		"tuyen-dung" => array("vi" => "tuyen-dung", "en" => "recruitment"),
-		"thu-vien-anh" => array("vi" => "thu-vien-anh", "en" => "gallery"),
-		"video" => array("vi" => "video", "en" => "video"),
-		"lien-he" => array("vi" => "lien-he", "en" => "contact")
-	)
-	
-    // Khi làm ở local, các bạn nên để config 'active' này bằng **FALSE** để có thể test được khi ko có hoặc ko đăng ký mã captcha
+#### Bước 2: Thiết lập cơ sở dữ liệu
+1. Mở công cụ quản lý cơ sở dữ liệu (**phpMyAdmin** hoặc **HeidiSQL** / **Navicat**).
+2. Tạo một database mới với tên: `buntuoi_nguyenbinh` và bảng mã `utf8mb4_unicode_ci`.
+3. Nhập (Import) file cơ sở dữ liệu của dự án vào database vừa tạo.
 
-    'googleAPI' => array(
-		'recaptcha' => array(
-			'active' => FALSE,
-			'urlapi' => 'https://www.google.com/recaptcha/api/siteverify',
-			'sitekey' => '6LezS5kUAAAAAF2A6ICaSvm7R5M-BUAcVOgJT_31',
-			'secretkey' => '6LezS5kUAAAAAGCGtfV7C1DyiqlPFFuxvacuJfdq'
-		)
-	),
+#### Bước 3: Cấu hình kết nối hệ thống
+Mở tệp tin `libraries/config.php` và điều chỉnh các thông số phù hợp với môi trường máy của bạn:
+
+```php
+$config['database'] = array(
+    'server-name' => $_SERVER["SERVER_NAME"],
+    'url' => '/',
+    'type' => 'mysql',
+    'host' => 'localhost',
+    'user' => 'root',        // Tên tài khoản MySQL
+    'pass' => '',            // Mật khẩu MySQL (để trống nếu dùng Laragon/XAMPP mặc định)
+    'dbname' => 'buntuoi_nguyenbinh', // Tên CSDL đã tạo ở Bước 2
+    'port' => 3306,
+    'prefix' => 'table_',
+    'charset' => 'utf8mb4'
+);
+```
+
+#### Bước 4: Khởi chạy dự án
+* **Cách 1: Sử dụng Laragon / XAMPP**:
+  - Đặt thư mục dự án vào thư mục gốc của web server (ví dụ: `C:/laragon/www/BunTuoiNguyenBinh` hoặc `C:/xampp/htdocs/BunTuoiNguyenBinh`).
+  - Truy cập trình duyệt qua địa chỉ: `http://localhost/BunTuoiNguyenBinh/` (hoặc `http://buntuoi_nguyenbinh.test` nếu dùng Virtual Host của Laragon).
+
+* **Cách 2: Chạy trực tiếp bằng PHP Built-in Server**:
+  Mở terminal tại thư mục gốc của dự án và chạy lệnh:
+  ```bash
+  php -S 127.0.0.1:8000
+  ```
+  Sau đó mở trình duyệt và truy cập: `http://127.0.0.1:8000/`.
+
+---
+
+## 🔐 4. Thông tin quản trị hệ thống (Admin SOTA)
+
+- **Đường dẫn trang quản trị**: `http://localhost/BunTuoiNguyenBinh/sota/` (hoặc `http://127.0.0.1:8000/sota/`).
+- **Tên đăng nhập**: `admin`
+- **Mật khẩu**: `admin`
+
+---
+
+## 📂 5. Cấu trúc thư mục chính của dự án
+
+```text
+├── assets/             # Chứa toàn bộ CSS, JS, fonts, thư viện frontend (Swiper, Bootstrap, Slick...)
+├── libraries/          # Lớp thư viện backend, router, config CSDL, class xử lý
+├── sources/            # Controller xử lý nghiệp vụ từng trang (index, product, news, order...)
+├── templates/          # Giao diện hiển thị (View) phân chia theo trang và layout
+│   ├── index/          # Giao diện Trang chủ
+│   ├── product/        # Giao diện Danh mục và Chi tiết sản phẩm
+│   ├── order/          # Giao diện Giỏ hàng & Đặt hàng
+│   ├── static/         # Giao diện các Trang tĩnh (Giới thiệu, Footer...)
+│   └── layout/         # Header, Menu, Footer, Modal, Bổ trợ
+├── sota/               # Toàn bộ hệ thống quản trị CMS SOTA dành cho Admin
+├── upload/             # Thư mục lưu trữ hình ảnh sản phẩm, bài viết, banner
+└── index.php           # Tệp điều hướng chính của toàn bộ website
+```
+
+---
+
+## 📄 6. Giấy phép
+Dự án được phát triển phục vụ mục đích học tập, nghiên cứu và triển khai ứng dụng thực tế.
