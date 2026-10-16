@@ -70,7 +70,7 @@
     // $config['photo']['man_photo'][$nametype]['thumb_photo'] = '55x55x2';
     // $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
-    /* Slideshow */
+    /* Đối tác */
     $nametype = "doi-tac";
     $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Đối Tác";
     $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
@@ -79,9 +79,23 @@
     $config['photo']['man_photo'][$nametype]['link_photo'] = true;
     $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
     $config['photo']['man_photo'][$nametype]['mota_photo'] = false;
-    $config['photo']['man_photo'][$nametype]['width_photo'] = 55;
-    $config['photo']['man_photo'][$nametype]['height_photo'] = 55;
-    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '55x55x2';
+    $config['photo']['man_photo'][$nametype]['width_photo'] = 160;
+    $config['photo']['man_photo'][$nametype]['height_photo'] = 80;
+    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '160x80x2';
+    $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+
+    /* Chứng nhận & Thành tích */
+    $nametype = "chung-nhan";
+    $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Chứng nhận & Thành tích";
+    $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
+    $config['photo']['man_photo'][$nametype]['images_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['link_photo'] = false;
+    $config['photo']['man_photo'][$nametype]['tieude_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['mota_photo'] = false;
+    $config['photo']['man_photo'][$nametype]['width_photo'] = 300;
+    $config['photo']['man_photo'][$nametype]['height_photo'] = 400;
+    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '160x220x2';
     $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
     $nametype = "background-footer";

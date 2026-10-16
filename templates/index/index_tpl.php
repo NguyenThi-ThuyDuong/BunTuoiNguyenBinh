@@ -117,9 +117,9 @@
             <div class="home-about__content">
                 <p class="home-about__eyebrow">Giới thiệu</p>
                 <h2 class="home-about__title"><?= !empty($gioithieu['ten' . $lang]) ? $gioithieu['ten' . $lang] : 'NGUYỄN BÍNH' ?></h2>
-                <p class="home-about__tagline">Lấy chữ Tâm để phục vụ – Lấy chữ Tín để đi lên</p>
+                <p class="home-about__tagline"><?= !empty($optsetting['slogan']) ? $optsetting['slogan'] : 'Lấy chữ Tâm để phục vụ – Lấy chữ Tín để đi lên' ?></p>
                 <div class="home-about__description">
-                    <p>Thành lập từ năm 1999, Bún Tươi Nguyễn Bính là thương hiệu chuyên sản xuất các sản phẩm chế biến từ gạo như bún tươi, phở, hủ tiếu, bánh canh, phục vụ đa dạng nhu cầu ẩm thực truyền thống Việt Nam. Với nguyên liệu chính từ gạo nguyên chất, không pha trộn bột năng và hạn chế hóa chất trong sản xuất, sản phẩm của Nguyễn Bính có màu trắng tự nhiên, hương vị đặc trưng, độ dai mềm vừa phải, không dễ bở nát khi chế biến – phù hợp với các món như bún bò, bún riêu, bún mắm, bún thịt nướng, hủ tiếu và nhiều món ăn truyền thống khác. Trải qua hơn 25 năm hoạt động, công ty không ngừng đầu tư máy móc, hiện đại hóa quy trình sản xuất, đồng thời chú trọng kiểm soát chất lượng và vệ sinh an toàn thực phẩm theo đúng quy định. Nhờ đó, Nguyễn Bính đã khẳng định được uy tín trên thị trường bằng chất lượng ổn định và sự tin cậy trong cung ứng.</p>
+                    <?= !empty($gioithieu['mota' . $lang]) ? htmlspecialchars_decode($gioithieu['mota' . $lang]) : (!empty($gioithieu['noidung' . $lang]) ? htmlspecialchars_decode($gioithieu['noidung' . $lang]) : '<p>Thành lập từ năm 1999, Bún Tươi Nguyễn Bính là thương hiệu chuyên sản xuất các sản phẩm chế biến từ gạo như bún tươi, phở, hủ tiếu, bánh canh, phục vụ đa dạng nhu cầu ẩm thực truyền thống Việt Nam. Với nguyên liệu chính từ gạo nguyên chất, không pha trộn bột năng và hạn chế hóa chất trong sản xuất, sản phẩm của Nguyễn Bính có màu trắng tự nhiên, hương vị đặc trưng, độ dai mềm vừa phải, không dễ bở nát khi chế biến – phù hợp với các món như bún bò, bún riêu, bún mắm, bún thịt nướng, hủ tiếu và nhiều món ăn truyền thống khác. Trải qua hơn 25 năm hoạt động, công ty không ngừng đầu tư máy móc, hiện đại hóa quy trình sản xuất, đồng thời chú trọng kiểm soát chất lượng và vệ sinh an toàn thực phẩm theo đúng quy định. Nhờ đó, Nguyễn Bính đã khẳng định được uy tín trên thị trường bằng chất lượng ổn định và sự tin cậy trong cung ứng.</p>') ?>
                 </div>
                 <a href="gioi-thieu" class="home-about__button">
                     <span>Tìm hiểu thêm</span>
@@ -825,61 +825,24 @@
                 <div class="certificate-marquee min-w-0 pb-2">
                     <div class="certificate-marquee__track flex w-max gap-3">
                         <div class="certificate-marquee__group flex shrink-0 gap-3">
-                            <article class="w-[112px] shrink-0 text-center">
-                                <span class="flex h-[142px] w-full items-center justify-center overflow-hidden rounded-[4px] bg-white p-1.5 shadow-[0_7px_18px_rgba(8,40,103,0.12)]">
-                                    <img class="max-h-full max-w-full object-contain"
-                                        onerror="this.onerror=null;this.src='thumbs/160x220x2/assets/images/noimage.png';"
-                                        src="upload/photo/10-91090.png"
-                                        alt="Giấy chứng nhận Đăng ký doanh nghiệp" />
-                                </span>
-                                <h3 class="mb-0 mt-3 line-clamp-2 text-[11px] font-semibold leading-[1.55] text-[#274675]">
-                                    Giấy chứng nhận Đăng ký doanh nghiệp
-                                </h3>
-                            </article>
-                            <article class="w-[112px] shrink-0 text-center">
-                                <span class="flex h-[142px] w-full items-center justify-center overflow-hidden rounded-[4px] bg-white p-1.5 shadow-[0_7px_18px_rgba(8,40,103,0.12)]">
-                                    <img class="max-h-full max-w-full object-contain"
-                                        onerror="this.onerror=null;this.src='thumbs/160x220x2/assets/images/noimage.png';"
-                                        src="upload/photo/12-94220.png"
-                                        alt="Giấy chứng nhận Nhãn hiệu" />
-                                </span>
-                                <h3 class="mb-0 mt-3 line-clamp-2 text-[11px] font-semibold leading-[1.55] text-[#274675]">
-                                    Giấy chứng nhận Nhãn hiệu
-                                </h3>
-                            </article>
-                            <article class="w-[112px] shrink-0 text-center">
-                                <span class="flex h-[142px] w-full items-center justify-center overflow-hidden rounded-[4px] bg-white p-1.5 shadow-[0_7px_18px_rgba(8,40,103,0.12)]">
-                                    <img class="max-h-full max-w-full object-contain"
-                                        onerror="this.onerror=null;this.src='thumbs/160x220x2/assets/images/noimage.png';"
-                                        src="upload/photo/2-11470.jpg"
-                                        alt="Giấy chứng nhận ATTP" />
-                                </span>
-                                <h3 class="mb-0 mt-3 line-clamp-2 text-[11px] font-semibold leading-[1.55] text-[#274675]">
-                                    Giấy chứng nhận ATTP
-                                </h3>
-                            </article>
-                            <article class="w-[112px] shrink-0 text-center">
-                                <span class="flex h-[142px] w-full items-center justify-center overflow-hidden rounded-[4px] bg-white p-1.5 shadow-[0_7px_18px_rgba(8,40,103,0.12)]">
-                                    <img class="max-h-full max-w-full object-contain"
-                                        onerror="this.onerror=null;this.src='thumbs/160x220x2/assets/images/noimage.png';"
-                                        src="upload/photo/3-32930.jpg"
-                                        alt="Giấy chứng nhận HACCP Codex" />
-                                </span>
-                                <h3 class="mb-0 mt-3 line-clamp-2 text-[11px] font-semibold leading-[1.55] text-[#274675]">
-                                    Giấy chứng nhận HACCP Codex
-                                </h3>
-                            </article>
-                            <article class="w-[112px] shrink-0 text-center">
-                                <span class="flex h-[142px] w-full items-center justify-center overflow-hidden rounded-[4px] bg-white p-1.5 shadow-[0_7px_18px_rgba(8,40,103,0.12)]">
-                                    <img class="max-h-full max-w-full object-contain"
-                                        onerror="this.onerror=null;this.src='thumbs/160x220x2/assets/images/noimage.png';"
-                                        src="upload/photo/5-71780.jpg"
-                                        alt="Top 10 Thương hiệu Uy tín – Chất lượng" />
-                                </span>
-                                <h3 class="mb-0 mt-3 line-clamp-2 text-[11px] font-semibold leading-[1.55] text-[#274675]">
-                                    Top 10 Thương hiệu Uy tín – Chất lượng
-                                </h3>
-                            </article>
+                            <?php if(!empty($chungnhan) && count($chungnhan) > 0) { 
+                                foreach($chungnhan as $cn) {
+                                    $cn_img = (!empty($cn['photo']) && file_exists(UPLOAD_PHOTO_L . $cn['photo']))
+                                        ? UPLOAD_PHOTO_L . $cn['photo']
+                                        : 'assets/images/noimage.png';
+                            ?>
+                                <article class="w-[112px] shrink-0 text-center">
+                                    <span class="flex h-[142px] w-full items-center justify-center overflow-hidden rounded-[4px] bg-white p-1.5 shadow-[0_7px_18px_rgba(8,40,103,0.12)]">
+                                        <img class="max-h-full max-w-full object-contain"
+                                            onerror="this.onerror=null;this.src='assets/images/noimage.png';"
+                                            src="<?= $cn_img ?>"
+                                            alt="<?= $cn['ten' . $lang] ?>" />
+                                    </span>
+                                    <h3 class="mb-0 mt-3 line-clamp-2 text-[11px] font-semibold leading-[1.55] text-[#274675]">
+                                        <?= $cn['ten' . $lang] ?>
+                                    </h3>
+                                </article>
+                            <?php } } ?>
                         </div>
                     </div>
                 </div>
@@ -890,26 +853,19 @@
                     Khách hàng & Đối tác
                 </h2>
                 <div class="home-partner-grid grid grid-cols-4 gap-2.5 md-max:grid-cols-3 sm-max:grid-cols-2">
-                    <?php 
-                        $partners = [
-                            'logo3-23400.png',
-                            'logo-1-19230.png',
-                            'logo3-91600.png',
-                            'logo2-25460.jpg',
-                            'logo3-63300.png',
-                            'logo2-88000.jpg',
-                            'logo-1-50560.png',
-                            'logo2-26760.jpg'
-                        ];
-                        foreach($partners as $ptn) {
+                    <?php if(!empty($doitac) && count($doitac) > 0) { 
+                        foreach($doitac as $dt) {
+                            $dt_img = (!empty($dt['photo']) && file_exists(UPLOAD_PHOTO_L . $dt['photo']))
+                                ? UPLOAD_PHOTO_L . $dt['photo']
+                                : 'assets/images/noimage.png';
                     ?>
                         <span class="group flex h-[66px] items-center justify-center overflow-hidden rounded-[7px] bg-white p-2.5 shadow-[0_6px_18px_rgba(8,40,103,0.07)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_rgba(8,40,103,0.13)]">
                             <img class="max-h-full max-w-full object-contain transition duration-300 group-hover:scale-105"
-                                onerror="this.onerror=null;this.src='thumbs/160x80x2/assets/images/noimage.png';"
-                                src="upload/photo/<?= $ptn ?>"
-                                alt="Đối tác Bún Tươi Nguyễn Bính" />
+                                onerror="this.onerror=null;this.src='assets/images/noimage.png';"
+                                src="<?= $dt_img ?>"
+                                alt="<?= $dt['ten' . $lang] ?>" />
                         </span>
-                    <?php } ?>
+                    <?php } } ?>
                 </div>
             </div>
         </div>

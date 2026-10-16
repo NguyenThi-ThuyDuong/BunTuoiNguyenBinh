@@ -9,7 +9,8 @@
     $tintuc = $d->rawQuery("select ten$lang, tenkhongdauvi, mota$lang, ngaytao, id, photo from #_news where type = ? and hienthi > 0 order by stt asc,id desc limit 0,6", array('tin-tuc'));
     $newsnb = $tintuc;
     $dichvu = $d->rawQuery("select ten$lang, tenkhongdauvi, id, photo, mota$lang from #_news where type = ? and hienthi > 0 order by stt,id desc limit 0,6", array('dich-vu'));
-    $doitac = $d->rawQuery("select ten$lang, mota$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('mxh'));
+    $doitac = $d->rawQuery("select ten$lang, mota$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('doi-tac'));
+    $chungnhan = $d->rawQuery("select ten$lang, mota$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc", array('chung-nhan'));
 
     /* SEO */
     $seoDB = $seo->getSeoDB(0,'setting','capnhat','setting');
