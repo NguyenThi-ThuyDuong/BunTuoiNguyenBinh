@@ -4,7 +4,7 @@ Website dự án tham khảo từ trang chính thức của thương hiệu **B�
 
 ---
 
-## 📌 1. Mô tả dự án
+##  1. Mô tả dự án
 
 Dự án được xây dựng nhằm mục đích:
 - Quảng bá và giới thiệu thương hiệu bún tươi sạch truyền thống 100% không chất bảo quản của Nghệ nhân - Doanh nhân Nguyễn Thị Bính.
@@ -16,7 +16,7 @@ Dự án được xây dựng nhằm mục đích:
 
 ---
 
-## 🛠️ 2. Công nghệ & Công cụ thực hiện
+##  2. Công nghệ & Công cụ thực hiện
 
 ### Backend
 - **Ngôn ngữ**: PHP (phiên bản 7.4 - 8.2) theo kiến trúc MVC linh hoạt.
@@ -46,7 +46,7 @@ Dự án được xây dựng nhằm mục đích:
 
 ---
 
-## 🚀 3. Hướng dẫn cài đặt & Chạy dự án
+##  3. Hướng dẫn cài đặt & Chạy dự án
 
 ### Yêu cầu môi trường
 - Máy chủ web: **Apache** hoặc **Nginx** (khuyên dùng môi trường **Laragon** hoặc **XAMPP** trên Windows).
@@ -98,7 +98,7 @@ $config['database'] = array(
 
 ---
 
-## 🔐 4. Thông tin quản trị hệ thống (Admin SOTA)
+##  4. Thông tin quản trị hệ thống (Admin SOTA)
 
 - **Đường dẫn trang quản trị**: `http://localhost/BunTuoiNguyenBinh/sota/` (hoặc `http://127.0.0.1:8000/sota/`).
 - **Tên đăng nhập**: `admin`
