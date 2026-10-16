@@ -1,6 +1,6 @@
 # Website Thương Mại & Giới Thiệu Doanh Nghiệp - Bún Tươi Nguyễn Bính
 
-Website chính thức của thương hiệu **Bún Tươi Nguyễn Bính** (kế thừa làng nghề bún Thủ Đức truyền thống), kết hợp giải pháp thương mại điện tử giới thiệu sản phẩm, dịch vụ cung ứng thực phẩm sạch và hệ thống quản trị nội dung toàn diện **CMS SOTA**.
+Website dự án tham khảo từ trang chính thức của thương hiệu **Bún Tươi Nguyễn Bính**, kết hợp giải pháp thương mại điện tử giới thiệu sản phẩm, dịch vụ cung ứng thực phẩm sạch và hệ thống quản trị nội dung toàn diện **CMS SOTA**.
 
 ---
 
@@ -11,7 +11,8 @@ Dự án được xây dựng nhằm mục đích:
 - Trưng bày và quản lý danh mục sản phẩm phong phú: bún tươi sợi trung, bún bò sợi to, bánh phở tươi, mì quảng, bánh hỏi, bún gạo lứt, bún khô xuất khẩu...
 - Cung cấp dịch vụ cung ứng bún tươi, bánh phở cho các chuỗi nhà hàng, khách sạn, bếp ăn tập thể và suất ăn công nghiệp.
 - Cho phép khách hàng đặt hàng trực tuyến, lựa chọn ngày giao và khung giờ giao hàng linh hoạt.
-- Hệ thống quản trị nội dung **CMS SOTA** giúp quản lý đơn hàng, danh mục sản phẩm, bài viết tin tức, thông tin tuyển dụng, chính sách và cấu hình công ty một cách trực quan, linh hoạt.
+- Hệ thống quản trị nội dung **CMS SOTA** giúp quản lý đơn hàng, danh mục sản phẩm, bài viết tin tức, thông tin tuyển dụng, chính sách và cấu hình công ty một cách trực quan, linh hoạt và đồng bộ.
+- Thực hiện dự án thức tập làm quen quy trình tiếp xúc quản trị trang website thực chiến.a
 
 ---
 
@@ -38,9 +39,10 @@ Dự án được xây dựng nhằm mục đích:
   - **FontAwesome 5 Pro**: Hệ thống biểu tượng giao diện trực quan.
 
 ### Quản trị CMS SOTA
-- Giao diện AdminLTE tinh gọn, dễ sử dụng.
+- Giao diện Admin tinh gọn, dễ sử dụng có tham khảo mã nguồn SoTa.
 - Trình soạn thảo văn bản CKEditor & quản lý tệp tin ElFinder.
 - Quản lý đa cấp danh mục sản phẩm, quản lý đơn hàng chuyên nghiệp.
+- Quản lý các thành phần dữ liệu và nội dung cho các trang như tuyển dụng, thông tin,...
 
 ---
 
@@ -124,4 +126,4 @@ $config['database'] = array(
 ---
 
 ## 📄 6. Giấy phép
-Dự án được phát triển phục vụ mục đích học tập, nghiên cứu và triển khai ứng dụng thực tế.
+Dự án được phát triển phục vụ mục đích học tập, nghiên cứu và triển khai ứng dụng thực tế theo đơn vị thực tập.
